@@ -189,11 +189,11 @@ def alignmentUI():
     # Setting root joint
     cmds.rowLayout("rootJointLayout", p="mainLayout", numberOfColumns=2)
     cmds.text(label="Input root joint: ", p="rootJointLayout", w=90, align="left")
-    rootJoint = cmds.textField(tx="Hips", p="rootJointLayout", w=150)
+    rootJoint = cmds.textField(tx="mixamorig:Hips", p="rootJointLayout", w=150)
     # Setting skin model
     cmds.rowLayout("skinLayout", p="mainLayout", numberOfColumns=2)
     cmds.text(label="Input skin model: ", p="skinLayout", w=90, align="left")
-    skinModel = cmds.textField(tx="kFBXASC045model", p="skinLayout", w=150)
+    skinModel = cmds.textField(tx="|Alpha_Surface, |Alpha_Joints", p="skinLayout", w=150)
     # Aligning button
     cmds.button(label="Align joints", w=windowSize[0], h=50, p="mainLayout", command=partial(alignJointsRotAxis, rootJoint, skinModel))
     
